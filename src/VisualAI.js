@@ -6,8 +6,11 @@ import { ApiKeyCredentials } from '@azure/ms-rest-js';
 import RandomImageUrl from './DefaultImages';
 
 // Authentication requirements
-const key = process.env.ComputerVisionKey || "";
-const endpoint = process.env.ComputerVisionEndPoint || 'https://eastus.api.cognitive.microsoft.com/';
+const key = process.env.REACT_APP_ComputerVisionKey;
+const endpoint = process.env.REACT_APP_ComputerVisionEndPoint;
+
+console.log(`key = ${key}`)
+console.log(`endpoint = ${endpoint}`)
 
 // Cognitive service features
 const visualFeatures = [

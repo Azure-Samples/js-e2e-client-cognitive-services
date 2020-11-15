@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { computerVision, isConfigured } from './VisualAI';
+import { computerVision, isConfigured as ComputerVisionIsConfigured} from './VisualAI';
+import { isConfigured as SpeechIsConfigured, synthesizeSpeech } from './SpeechAI';
 
 function App() {
 
@@ -67,7 +68,7 @@ function App() {
   }
   
   function Render() {
-    const ready = isConfigured();
+    const ready = ComputerVisionIsConfigured();
     if (ready) {
       return <Analyze />;
     }
