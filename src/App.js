@@ -1,0 +1,62 @@
+import React, { useState } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import { computerVision } from './VisualAI';
+
+function App() {
+
+  const [fileSelected, setFileSelected] = useState(null);
+  const [analysis, setAnalysis] = useState({});
+  const [processing, setProcessing] = useState(false);
+
+  const handleChange = (e) => {
+    setFileSelected(e.target.value)
+  }
+  const onFileUrlEntered = (e) => {
+
+    // hold UI
+    setProcessing(true);
+    setAnalysis({});
+
+    computerVision(fileSelected || null).then((items) => {
+      // reset state/form
+      setAnalysis(items);
+      setFileSelected("");
+      setProcessing(false);
+    });
+
+  };
+
+  // Display JSON data in readable format
+  const PrettyPrintJson = (data) => {
+    return (<div><pre>{JSON.stringify(data, null, 2)}</pre></div>);
+  }
+
+  const DisplayResults = () => (
+    <div>
+      <h2>Computer Vision Analysis</h2>
+      <div><img src={analysis[0].URL} height="200" border="1" /></div>
+      {PrettyPrintJson(analysis)}
+    </div>
+  );
+
+  return (
+    <div>
+      <h1>Analyze image</h1>
+      {!processing &&
+        <div>
+          <div>
+            <label>URL</label>
+            <input type="text" placeholder="Enter URL or leave empty for random image from collection" size="50" onChange={handleChange}></input>
+          </div>
+          <button onClick={onFileUrlEntered}>Analyze</button>
+        </div>
+      }
+      {processing && <div>Processing</div>}
+      <hr />
+      {analysis.length > 0 && DisplayResults()}
+    </div>
+  );
+}
+
+export default App;
