@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { computerVision } from './VisualAI';
+import { computerVision, isConfigured } from './VisualAI';
 
 function App() {
 
   const [fileSelected, setFileSelected] = useState(null);
   const [analysis, setAnalysis] = useState({});
   const [processing, setProcessing] = useState(false);
-
+  
   const handleChange = (e) => {
     setFileSelected(e.target.value)
   }
@@ -39,8 +39,9 @@ function App() {
       {PrettyPrintJson(analysis)}
     </div>
   );
-
-  return (
+  
+  const Analyze = () => {
+    return (
     <div>
       <h1>Analyze image</h1>
       {!processing &&
@@ -55,7 +56,29 @@ function App() {
       {processing && <div>Processing</div>}
       <hr />
       {analysis.length > 0 && DisplayResults()}
+      </div>
+    )
+  }
+  
+  const CantAnalyze = () => {
+    return (
+      <div>Key and/or endpoint not configured in ./VisualAI.js</div>
+    )
+  }
+  
+  function Render() {
+    const ready = isConfigured();
+    if (ready) {
+      return <Analyze />;
+    }
+    return <CantAnalyze />;
+  }
+
+  return (
+    <div>
+      {Render()}
     </div>
+    
   );
 }
 

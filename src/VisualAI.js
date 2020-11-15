@@ -22,6 +22,12 @@ const visualFeatures = [
     "Brands"
 ];
 
+export const isConfigured = () => {
+    const result = (key.length > 0 && endpoint.length > 0) ? true : false;
+    console.log(`isConfigured = ${result}`)
+    return result;
+}
+
 // Computer Vision detected Printed Text
 const includesText = async (tags) => {
     return tags.filter((el) => {
