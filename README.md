@@ -20,6 +20,23 @@ This project framework provides the following features:
 - Library version
 - ...
 
+### Create Speech resource
+
+```azurecli
+az cognitiveservices account create \
+    --name demo-cognitive-services \
+    --resource-group rg-demo-cog-serv-eastus \
+    --kind SpeechServices \
+    --sku F0 \
+    --location eastus \
+    --yes
+
+```
+
+```bash
+export REACT_APP_ComputerVisionKey=123456
+```
+
 ### Installation
 
 (ideally very short)

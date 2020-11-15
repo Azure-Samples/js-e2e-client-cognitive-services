@@ -7,7 +7,9 @@ const endpoint = process.env.REACT_APP_SpeechEndPoint || 'https://eastus.api.cog
 export const isConfigured = () => {
     
     const result = (key.length > 0 && endpoint.length > 0) ? true : false;
-    console.log(`isConfigured = ${result}`)
+    console.log(`key = ${key}`)
+    console.log(`endpoint = ${endpoint}`)
+    console.log(`Speech isConfigured = ${result}`)
     return result;
 }
 
