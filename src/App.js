@@ -17,9 +17,9 @@ function App() {
     setProcessing(true);
     setAnalysis({});
 
-    computerVision(fileSelected || null).then((items) => {
+    computerVision(fileSelected || null).then((item) => {
       // reset state/form
-      setAnalysis(items);
+      setAnalysis(item);
       setFileSelected("");
       setProcessing(false);
     });
@@ -34,7 +34,7 @@ function App() {
   const DisplayResults = () => (
     <div>
       <h2>Computer Vision Analysis</h2>
-      <div><img src={analysis[0].URL} height="200" border="1" alt={analysis[0].captions[0].text} /></div>
+      <div><img src={analysis.URL} height="200" border="1" alt={(analysis.captions && analysis.captions[0].text ? analysis.captions[0].text : "can't find caption")} /></div>
       {PrettyPrintJson(analysis)}
     </div>
   );

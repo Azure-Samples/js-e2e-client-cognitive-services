@@ -71,7 +71,7 @@ export const computerVision = async (url) => {
     }
 
     // all information about image
-    return [{ "URL": urlToAnalyze, ...analysis}];
+    return { "URL": urlToAnalyze, ...analysis};
 }
 // analyze text in image
 const readTextFromURL = async (client, url) => {
