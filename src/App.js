@@ -34,7 +34,7 @@ function App() {
   const DisplayResults = () => (
     <div>
       <h2>Computer Vision Analysis</h2>
-      <div><img src={analysis[0].URL} height="200" border="1" alt="" /></div>
+      <div><img src={analysis[0].URL} height="200" border="1" alt={analysis[0].captions[0].text} /></div>
       {PrettyPrintJson(analysis)}
     </div>
   );
