@@ -6,8 +6,8 @@ import { ApiKeyCredentials } from '@azure/ms-rest-js';
 import RandomImageUrl from './DefaultImages';
 
 // Authentication requirements
-const key = process.env.REACT_APP_ComputerVisionKey;
-const endpoint = process.env.REACT_APP_ComputerVisionEndPoint;
+const key = process.env.REACT_APP_COMPUTERVISIONKEY;
+const endpoint = process.env.REACT_APP_COMPUTERVISIONENDPOINT;
 
 console.log(`key = ${key}`)
 console.log(`endpoint = ${endpoint}`)
@@ -26,7 +26,7 @@ const visualFeatures = [
 ];
 
 export const isConfigured = () => {
-    const result = (key.length > 0 && endpoint.length > 0) ? true : false;
+    const result = (key && endpoint && (key.length > 0) && (endpoint.length > 0)) ? true : false;
     console.log(`key = ${key}`)
     console.log(`endpoint = ${endpoint}`)
     console.log(`ComputerVision isConfigured = ${result}`)
@@ -75,9 +75,6 @@ export const computerVision = async (url) => {
 }
 // analyze text in image
 const readTextFromURL = async (client, url) => {
-
-    const STATUS_SUCCEEDED = "succeeded";
-    const STATUS_FAILED = "failed"
     
     let result = await client.read(url);
     let operationID = result.operationLocation.split('/').slice(-1)[0];
@@ -87,7 +84,7 @@ const readTextFromURL = async (client, url) => {
     const start = Date.now();
     console.log(`${start} -${result?.status} `);
     
-    while (result.status !== STATUS_SUCCEEDED) {
+    while (result.status !== "succeeded") {
         await wait(500);
         console.log(`${Date.now() - start} -${result?.status} `);
         result = await client.getReadResult(operationID);
