@@ -1,3 +1,5 @@
+// ./src/azure-cognitiveservices-computervision.js
+
 // Azure SDK client libraries
 import { ComputerVisionClient } from '@azure/cognitiveservices-computervision';
 import { ApiKeyCredentials } from '@azure/ms-rest-js';
