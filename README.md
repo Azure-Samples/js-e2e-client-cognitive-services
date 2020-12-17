@@ -1,74 +1,53 @@
-# Project Name
+---
+date: 12/17/2020
+owner: diberry
+page_type: sample
+languages:
+- javascript
+- typescript
+products:
+- azure-app-service-static
+- azure-computer-vision
+---
 
-(short, 1-3 sentenced, description of the project)
+# Build and deploy a Static Web app to Azure
+
+For a complete tutorial, please use the [Microsoft Documentation tutorial found here](https://docs.microsoft.com/azure/developer/javascript/tutorial/static-web-app/introduction). 
+
+In this tutorial, locally build and deploy a React/TypeScript client application to an Azure Static Web App with a GitHub action. 
+
+**This app analyzes an image with Azure Cognitive Services Computer Vision**
+
+![](https://docs.microsoft.com/azure/developer/javascript/media/static-web-app/browser-screenshot-react-computervision-app-image-analysis-result.png)
 
 ## Features
 
-This project framework provides the following features:
+The React (create-react-app) provides the following functionality: 
+* Display message if Azure key and endpoint for Cognitive Services Computer Vision isn't found
+* Allows you to analyze an image with Cognitive Services Computer Vision
+    * Enter a public image URL or analyze image from collection
+    * When analysis is complete
+        * Display image
+        * Display Computer Vision JSON results 
 
-* Feature 1
-* Feature 2
-* ...
-
-## Getting Started
+The GitHub action starts when a push to a specific branch happens:
+* Inserts GitHub secrets for Computer Vision key and endpoint into build
+* Builds the React (create-react-app) client
+* Moves the resulting files to your Azure Static Web app resource
 
 ### Prerequisites
 
-(ideally very short, if any)
 
-- OS
-- Library version
-- ...
+- [Node.js and npm](https://nodejs.org/en/download) - installed to your local machine.
+- [Visual Studio Code](https://code.visualstudio.com/) - installed to your local machine. 
+    - [Azure Static Web Apps (Preview)](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestaticwebapps) - used to deploy React app to Azure Static Web app.
+- [Git](https://git-scm.com/downloads) - used to push to GitHub - which activates the GitHub action.
+- [GitHub account](https://github.com/join) - to fork and push to a repo
+- Use [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) using the bash environment.
 
-### Create Speech resource
+   [![Embed launch](https://shell.azure.com/images/launchcloudshell.png "Launch Azure Cloud Shell")](https://shell.azure.com)   
+- If you prefer, [install](https://docs.microsoft.com/cli/azure/install-azure-cli) the Azure CLI to run CLI reference commands.
+   - If you're using a local install, sign in with Azure CLI by using the [az login](https://docs.microsoft.com/cli/azure/reference-index#az-login) command.  To finish the authentication process, follow the steps displayed in your terminal.  See [Sign in with Azure CLI](https://docs.microsoft.com/cli/azure/authenticate-azure-cli) for additional sign-in options.
+  - When you're prompted, install Azure CLI extensions on first use.  For more information about extensions, see [Use extensions with Azure CLI](https://docs.microsoft.com/cli/azure/azure-cli-extensions-overview).
+  - Run [az version](https://docs.microsoft.com/cli/azure/reference-index?#az_version) to find the version and dependent libraries that are installed. To upgrade to the latest version, run [az upgrade](https://docs.microsoft.com/cli/azure/reference-index?#az_upgrade).
 
-```azurecli
-az cognitiveservices account create \
-    --name demo-cognitive-services \
-    --resource-group rg-demo-cog-serv-eastus \
-    --kind SpeechServices \
-    --sku F0 \
-    --location eastus \
-    --yes
-
-```
-
-```bash
-export REACT_APP_ComputerVisionKey=123456
-```
-
-### Installation
-
-(ideally very short)
-
-- npm install [package name]
-- mvn install
-- ...
-
-### Quickstart
-(Add steps to get up and running quickly)
-
-1. git clone [repository clone url]
-2. cd [respository name]
-3. ...
-
-
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
