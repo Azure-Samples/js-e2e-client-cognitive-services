@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { computerVision, isConfigured as ComputerVisionIsConfigured} from './VisualAI';
+import { computerVision, isConfigured as ComputerVisionIsConfigured } from './azure-cognitiveservices-computervision';
 
 function App() {
 
@@ -63,7 +63,7 @@ function App() {
   
   const CantAnalyze = () => {
     return (
-      <div>Key and/or endpoint not configured in ./VisualAI.js</div>
+      <div>Key and/or endpoint not configured in ./azure-cognitiveservices-computervision.js</div>
     )
   }
   
