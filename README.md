@@ -1,6 +1,9 @@
 ---
 date: 12/17/2020
 owner: diberry
+statusNotificationTargets:diberry	
+name: Build and deploy a Static Web app to Azure
+urlFragment: js-e2e-react-static-web-app-computer-vision
 page_type: sample
 languages:
 - javascript
@@ -8,6 +11,7 @@ languages:
 products:
 - azure-app-service-static
 - azure-computer-vision
+description: In this tutorial, locally build and deploy a React/TypeScript client application to an Azure Static Web App with a GitHub action. Allows you to analyze an image with Cognitive Services Computer Vision.
 ---
 
 # Build and deploy a Static Web app to Azure
