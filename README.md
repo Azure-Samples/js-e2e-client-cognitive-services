@@ -17,11 +17,12 @@ description: In this tutorial, locally build and deploy a React/TypeScript clien
 
 # Build and deploy a Static Web app to Azure
 
-For a complete tutorial, please use the [Microsoft Documentation tutorial found here](https://docs.microsoft.com/azure/developer/javascript/tutorial/static-web-app/introduction). 
-
 In this tutorial, locally build and deploy a React/TypeScript client application to an Azure Static Web App with a GitHub action. 
 
-**This app analyzes an image with Azure Cognitive Services Computer Vision**
+* [Read Tutorial](https://docs.microsoft.com/azure/developer/javascript/tutorial/static-web-app/introduction)
+* Create Azure resources
+    * [Static web app](https://docs.microsoft.com/azure/static-web-apps)
+    * [Cognitive Services' Computer Vision](https://docs.microsoft.com/azure/cognitive-services/computer-vision/)
 
 ![](https://docs.microsoft.com/azure/developer/javascript/media/static-web-app/browser-screenshot-react-computervision-app-image-analysis-result.png)
 
