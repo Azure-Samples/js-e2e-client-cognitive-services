@@ -8,7 +8,7 @@ page_type: sample
 languages:
 - javascript
 - typescript
-- nodejsgi
+- nodejs
 products:
 - azure-app-service-static
 - azure-computer-vision
