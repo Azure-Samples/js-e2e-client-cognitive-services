@@ -1,7 +1,7 @@
 ---
 date: 12/17/2020
 owner: diberry
-statusNotificationTargets:diberry	
+statusNotificationTargets: diberry	
 name: Build and deploy a Static Web app to Azure
 urlFragment: js-e2e-react-static-web-app-computer-vision
 page_type: sample
