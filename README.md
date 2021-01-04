@@ -4,8 +4,13 @@ languages:
 - javascript
 products:
 - azure-app-service-static
-description: "In this tutorial, locally build and deploy a React/TypeScript client application to an Azure Static Web App with a GitHub action. Allows you to analyze an image with Cognitive Services Computer Vision."
-urlFragment: js-e2e-client-cognitive-services
+name: "JavaScript end-to-end client analyze image with Cognitive Services"
+description: "Locally build and deploy a client application to an Azure Static Web App with a GitHub action, analyze image with Cognitive Services Computer Vision."
+products: 
+- azure
+- azure-computer-vision
+- azure-app-service-static
+- vs-code
 ---
 
 # Build and deploy a Static Web app to Azure
