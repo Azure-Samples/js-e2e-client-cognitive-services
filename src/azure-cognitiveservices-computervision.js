@@ -7,6 +7,7 @@ import { ApiKeyCredentials } from '@azure/ms-rest-js';
 // List of sample images to use in demo
 import RandomImageUrl from './DefaultImages';
 
+
 // Authentication requirements
 const key = process.env.REACT_APP_COMPUTERVISIONKEY;
 const endpoint = process.env.REACT_APP_COMPUTERVISIONENDPOINT;
@@ -55,7 +56,7 @@ const wait = (timeout) => {
 }
 
 // Analyze Image from URL
-export const computerVision = async (url) => {
+export const computerVision = async (url = 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Felis_silvestris_silvestris_small_gradual_decrease_of_quality.png') => {
 
     // authenticate to Azure service
     const computerVisionClient = new ComputerVisionClient(
