@@ -1,3 +1,5 @@
+// ./src/DefaultImages.js
+
 const describeURL = 'https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/celebrities.jpg';
 const categoryURLImage = 'https://moderatorsampleimages.blob.core.windows.net/samples/sample16.png';
 const tagsURL = 'https://moderatorsampleimages.blob.core.windows.net/samples/sample16.png';
